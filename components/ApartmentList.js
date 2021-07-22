@@ -20,3 +20,9 @@ const ApartmentList = () => {
   );
 };
 export default ApartmentList;
+
+/* {apartments
+.filter((apartments) => apartments.rent > 1000)
+.map((filteredAp) => (
+<div>{filteredAp.location}</div>
+))} */

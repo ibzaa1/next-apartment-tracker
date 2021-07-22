@@ -8,7 +8,6 @@ export default function Home() {
       <Head>
         <title>Home || Apartment Tracker</title>
       </Head>
-
       <ApartmentList />
     </div>
   );
