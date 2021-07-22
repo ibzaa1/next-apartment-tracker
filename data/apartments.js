@@ -1,6 +1,7 @@
-export const Apartments = [
+export const apartments = [
   {
-    picture: 'http://placehold.it/32x32',
+    picture:
+      'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80',
     rent: 1367,
     size: 46,
     location: 'Rutland Road, Springhill',
