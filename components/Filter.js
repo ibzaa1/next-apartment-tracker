@@ -2,20 +2,19 @@ import { apartments } from '../data/apartments';
 import Card from './Card';
 
 const Filter = () => {
-  function filter500Less() {
-    apartments
-      .filter((apartments) => apartments.rent < 500)
-      .map((filteredAp) => (
-        <Card>
-          <div>{filteredAp.location}</div>
-        </Card>
-      ));
-  }
+  apartments
+    .filter((apartments) => apartments.rent <= 500)
+    .map((filteredApartments) => (
+      <Card>
+        <div>{filteredApartments.location}</div>
+      </Card>
+    ));
+
   return (
     <div>
-      <h2>Filter:</h2>
+      <h2 className='text-2xl pb-2'>Pick your price:</h2>
       <button
-        onClick={filter500Less}
+        onClick={Filter}
         className='border-4 border-gray-400 hover:bg-gray-200 p-2 mx-2'
       >
         €500 or less
