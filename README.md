@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1>Next Booklist</h1>
 
 ## Getting Started
 
@@ -10,25 +10,48 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Table of Contents
+- [Features](#features)
+- [Example Code](#example-code)
+- [Philosophy](#philosophy)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Features
+- __Clear Layout:__ The page has a clear layout of the page, there is a header, main content and footer. 
+- __ Nice Styling:__ The styling of the page is consistant and matching, all buttons, cards etc have the same color pallette. 
+- __Tailwind CSS:__ Pages med with Tailwind CSS which make it super easy to style code.
+- __Next JS:__ Made with Next JS which is a framework on top of react which like Tailwind CSS makes it so much easier to write code.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Example Code
+```jsx
+<div className='grid grid-rows-3 grid-cols-3 justify-center m-4 pt-3'>
+        {displayApartments.map((apartment) => (
+          <div className='p-2' key={apartment.picture}>
+            <Card>
+              <div className='pt-7 pb-5 text-center'>
+                <Image
+                  src={`https://source.unsplash.com/${apartment.picture}`}
+                  width={150}
+                  height={150}
+                />
+                <p>Rent Price: €{apartment.rent}</p>
+                <p>Apartment Size: {apartment.size} (sqm)</p>
+                <p>Apartment Location: {apartment.location}</p>
+                <Favorite></Favorite>
+              </div>
+            </Card>
+          </div>
+        ))}
+      </div>
+```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Philosophy
+I beleive progamming and coding should be available for everyone as it is awesome with what you can do with it. 
+From creating games, to developing websites, programming has a world of its own. I truly beleive that each and
+every single one of us has their own place in programming, even if it just to get the basics out of the way.
+Not to mention, learning code will allow you to access all types of careers, no matter which industry. A basic 
+example is the finance and bankig industry. You may think, how does programming have anythig to do with them, but
+if you notice, most of the time, that accountants behind the till use a computer to store most of their data, how 
+think that was create - with programming. This is a basic and simple idea of where programming is used anywhere and
+everywhere! 
