@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 const FavoriteBtn = () => {
+  const [favoriteBtn, setFavoriteBtn] = useState(false);
+
   const handleFavorite = () => {
     setFavoriteBtn(!favoriteBtn);
   };
 
-  const [favoriteBtn, setFavoriteBtn] = useState(false);
   return (
     <div>
       <button
