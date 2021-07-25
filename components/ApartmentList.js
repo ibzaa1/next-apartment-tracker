@@ -2,60 +2,39 @@ import { apartments } from '../data/apartments';
 import Card from './Card';
 import Favorite from './Favorite';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const ApartmentList = () => {
-  const [filter500, setFilter500] = useState(false);
+  const [displayApartments, setDisplayApartment] = useState(apartments);
 
-  const handleFilter = () => {
-    setFilter500(true);
-  };
-
-  useEffect(() => {
-    const result = apartments.filter((apartment) => apartment.rent <= 500);
-    <Card>{result}</Card>;
-    console.log(result);
-    // apartments.map((apartment) => {
-    //   const result = Object.values(apartment).filter(
-    //     (apart) => apart.rent >= 500
-
-    //   );
-    //   console.log(result);
-    // // if (apartment.rent <= 500) {
-    // <Card>
-    //   <div className='p-3 text-center'>
-    //     <Image
-    //       src={`https://source.unsplash.com/${apartment.picture}`}
-    //       width={150}
-    //       height={150}
-    //     ></Image>
-    //     <p>Rent Price: €{apartment.rent}</p>
-    //     <p>Apartment Size: {apartment.size} (sqm)</p>
-    //     <p>Apartment Location: {apartment.location}</p>
-    //     <Favorite></Favorite>
-    //   </div>
-    // </Card>;
-    // // }
-    // });
-  }, [filter500]);
+  const is500Less = apartments.rent <= 2000;
 
   return (
     <div className='grid grid-rows-3 grid-cols-3 justify-center m-4'>
       {/* <button
-        onClick={handleFilter}
-        className='border-4 border-gray-400 hover:bg-gray-200 p-2 mx-2 rounded-xl'
+        onClick={() => {
+          setDisplayApartment([is500Less]);
+        }}
       >
-        €500 or less
+        Hello
       </button> */}
-      {apartments.map((apartment) => (
+
+      <button
+        onClick={() => {
+          setDisplayApartment(apartments);
+        }}
+      >
+        Reset
+      </button>
+      {displayApartments.map((apartment) => (
         <div className='p-2' key={apartment.picture}>
           <Card>
-            <div className='p-3 text-center'>
+            <div className='pt-7 pb-5 text-center'>
               <Image
                 src={`https://source.unsplash.com/${apartment.picture}`}
                 width={150}
                 height={150}
-              ></Image>
+              />
               <p>Rent Price: €{apartment.rent}</p>
               <p>Apartment Size: {apartment.size} (sqm)</p>
               <p>Apartment Location: {apartment.location}</p>
